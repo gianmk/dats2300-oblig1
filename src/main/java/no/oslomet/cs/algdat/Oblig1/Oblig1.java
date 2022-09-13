@@ -51,8 +51,32 @@ public class Oblig1 {
 
     ///// Oppgave 2 //////////////////////////////////////
     public static int antallUlikeSortert(int[] a) {
-        throw new UnsupportedOperationException();
+        // throw new UnsupportedOperationException();
+        if(a.length==0){
+            return 0;
+        }
+
+        int antall = 1;
+
+        for(int i = 1; i< a.length; i++){
+
+            int tall1 = a[i-1];
+            int tall2 = a[i];
+
+            if(tall1>tall2){
+                throw new IllegalStateException("array er ikke sortert.");
+            }
+
+
+            else if(tall1!=tall2){
+                antall++;
+            }
+
+        }
+        return antall;
     }
+
+
 
     ///// Oppgave 3 //////////////////////////////////////
     public static int antallUlikeUsortert(int[] a) {
