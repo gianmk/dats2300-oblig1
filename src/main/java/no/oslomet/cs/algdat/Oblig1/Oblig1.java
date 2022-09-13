@@ -3,17 +3,50 @@ package no.oslomet.cs.algdat.Oblig1;
 ////// Løsningsforslag Oblig 1 ////////////////////////
 
 import java.lang.UnsupportedOperationException;
+import java.util.NoSuchElementException;
 
 public class Oblig1 {
     private Oblig1() {}
 
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length <= 0) {
+            throw new UnsupportedOperationException(" array inneholder ikke tall.");
+        }
+
+        for(int i = 1; i < a.length; i++){
+
+            if(a[i-1]>a[i]){
+                int bytte = a[i];
+                a[i]=a[i-1];
+                a[i-1] = bytte;
+            }
+
+        }
+
+        return a[a.length-1];
     }
 
     public static int ombyttinger(int[] a) {
-        throw new UnsupportedOperationException();
+        if(a.length <= 0){
+            throw new NoSuchElementException("Arrayet innerholder ikke tall");
+        }
+
+
+        int antallBytte = 0;
+
+        for(int i = 1; i < a.length; i++){
+            if(a[i-1]>a[i]){
+               antallBytte++;
+                int tall = a[i];
+                a[i]=a[i-1];
+                a[i-1] = tall;
+            }
+
+        }
+
+        return antallBytte;
+
     }
 
     ///// Oppgave 2 //////////////////////////////////////
@@ -28,8 +61,7 @@ public class Oblig1 {
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
-        throw new UnsupportedOperationException();
-    }
+        throw new UnsupportedOperationException();}
 
     ///// Oppgave 5 //////////////////////////////////////
     public static void rotasjon(char[] a) {
