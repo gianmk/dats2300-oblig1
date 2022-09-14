@@ -16,9 +16,11 @@ class Oblig1UnitTest {
 
 
     @org.junit.jupiter.api.Test
-    void ombyttinger() {
-        assertEquals(true, false, "Implementer ombyttinger og denne testen");
-    }
+        void ombyttinger() {
+            int[] tall = {9,8,7,6,5,4,3,2,1,0};
+            int[] random = Oblig1Test.randPerm(10);
+            assertEquals(9, Oblig1.ombyttinger(tall), "Implementer ombyttinger og denne testen");
+        }
 
     @org.junit.jupiter.api.Test
     void antallUlikeSortert() {
