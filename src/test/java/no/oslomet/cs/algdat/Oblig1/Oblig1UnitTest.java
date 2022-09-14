@@ -10,8 +10,10 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void maks() {
-        assertEquals(true, false, "Implementer maks og denne testen");
+        int[] tall = {0,1,2,3,4,5,6,7,8,9};
+        assertEquals(9, Oblig1.maks(tall), "Implementer maks og denne testen");
     }
+
 
     @org.junit.jupiter.api.Test
     void ombyttinger() {
