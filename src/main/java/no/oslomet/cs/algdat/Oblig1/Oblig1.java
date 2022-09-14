@@ -79,8 +79,13 @@ public class Oblig1 {
 
 
     ///// Oppgave 3 //////////////////////////////////////
-    public static int antallUlikeUsortert(int[] a) {
-        throw new UnsupportedOperationException();
+    public static int antallUlikeUsortert(int[] a) {if (a.length == 0) {        // sjekker om tabell er tom
+        return 0;
+    }
+
+        int antallUlike = 1;
+        boolean bruktFor;
+
     }
 
     ///// Oppgave 4 //////////////////////////////////////
