@@ -85,7 +85,21 @@ public class Oblig1 {
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
-        throw new UnsupportedOperationException();}
+        //throw new UnsupportedOperationException();}
+      if(a.length==0){
+        return;
+    }
+    int partall = 0;
+    int oddetall = 0;
+    //lokke for a sjekke om d kun r enten partall eller oddetall
+        for(int i = 0; i<a.length; i++){
+        if(a[i]%2==0){
+            partall++;
+        }else
+            oddetall++;
+    }
+
+    }
 
     ///// Oppgave 5 //////////////////////////////////////
     public static void rotasjon(char[] a) {
