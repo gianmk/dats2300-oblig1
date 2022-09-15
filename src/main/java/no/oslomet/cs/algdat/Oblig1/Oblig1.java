@@ -12,12 +12,11 @@ public class Oblig1 {
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
         if (a.length <= 0) {
-            throw new NoSuchElementException(" array inneholder ikke tall.");
+            throw new NoSuchElementException(" array inneholder ikke tall.");  // feil om det ikke er tall i array
         }
 
-        for(int i = 1; i < a.length; i++){
-
-            if(a[i-1]>a[i]){
+        for(int i = 1; i < a.length; i++){  // for løkke som går gjennom array
+            if(a[i-1]>a[i]){               // if state som bobler frem størst verdi.
                 int temp = a[i];
                 a[i]=a[i-1];
                 a[i-1] = temp;
@@ -25,8 +24,17 @@ public class Oblig1 {
 
         }
 
-        return a[a.length-1];
+        return a[a.length-1];  //returner siste verdi i array, som er største.
     }
+
+    /* deloppgave
+     Når blir det flest ombyttinger?
+     Det er flest ombyttinger når det er synkende verdi fra venstre til høyre
+
+     Når blir det færrest?
+      Det er færrest når det er økende verdi  fra venstre til høyre
+
+     */
 
     public static int ombyttinger(int[] a) {
         if(a.length <= 0){
@@ -34,11 +42,11 @@ public class Oblig1 {
         }
 
 
-        int antallBytte = 0;
+        int teller = 0;  // init en teller som teller all ombyttinger
 
-        for(int i = 1; i < a.length; i++){
-            if(a[i-1]>a[i]){
-               antallBytte++;
+        for(int i = 1; i < a.length; i++){  // for løkke som kjører gjennom array
+            if(a[i-1]>a[i]){   // sjekker om verdien er større enn verdien til høyre, dersom det er, vil de bytte plass og teller økes med 1
+               teller++;
                 int tall = a[i];
                 a[i]=a[i-1];
                 a[i-1] = tall;
@@ -46,7 +54,7 @@ public class Oblig1 {
 
         }
 
-        return antallBytte;
+        return teller;  // antall ombyttinger totalt
 
     }
 
@@ -54,22 +62,22 @@ public class Oblig1 {
     public static int antallUlikeSortert(int[] a) {
         // throw new UnsupportedOperationException();
         if(a.length==0){
-            return 0;
+            return 0;    // returner 0 om array er tomt.
         }
 
         int antall = 1;
 
-        for(int i = 1; i< a.length; i++){
+        for(int i = 1; i< a.length; i++){  // looper gjennom array
 
             int tall1 = a[i-1];
             int tall2 = a[i];
 
             if(tall1>tall2){
-                throw new IllegalStateException("array er ikke sortert.");
+                throw new IllegalStateException("array er ikke sortert.");   // sjekker om array er sorter stigende.
             }
 
 
-            else if(tall1!=tall2){
+            else if(tall1!=tall2){   // antall økes med 1 om tallet er større enn tallet etter.
                 antall++;
             }
 
@@ -83,7 +91,7 @@ public class Oblig1 {
     public static int antallUlikeUsortert(int[] a)  {
         int ulike = 0;
 
-        if(a.length == 0) {                                 //sjekker om array er tomt
+        if(a.length == 0) {                                 //returner 0 om array er tomt.
             return 0;
         }
         for(int i = 0; i < a.length;i++){
