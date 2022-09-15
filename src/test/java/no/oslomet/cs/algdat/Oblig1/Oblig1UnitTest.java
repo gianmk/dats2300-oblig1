@@ -54,9 +54,12 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void flett() {
-        assertEquals(true, false, "Implementer flett og denne testen");
+        String a = "ACEG";
+        String b = "BDFH";
+        String c = "";
+        assertEquals("ABCDEFGH", Oblig1.flett(a,b), "Implementer flett og denne testen");
+        assertEquals("ABCDEFGH", Oblig1.flett(a,b,c), "Implementer flett og denne testen");
     }
-
     @org.junit.jupiter.api.Test
     void indekssortering() {
         assertEquals(true, false, "Implementer indekssortering og denne testen");

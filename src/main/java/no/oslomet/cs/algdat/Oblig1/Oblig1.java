@@ -18,9 +18,9 @@ public class Oblig1 {
         for(int i = 1; i < a.length; i++){
 
             if(a[i-1]>a[i]){
-                int bytte = a[i];
+                int temp = a[i];
                 a[i]=a[i-1];
-                a[i-1] = bytte;
+                a[i-1] = temp;
             }
 
         }
@@ -126,10 +126,7 @@ public class Oblig1 {
             }
         }
 
-
         Arrays.sort(a, 0, left);
-
-
         Arrays.sort(a, left, a.length);
     }
     // hjelpe metode for oppgave 4
@@ -163,15 +160,56 @@ public class Oblig1 {
     }
 
     ///// Oppgave 7 //////////////////////////////////////
-    /// 7a)
-    public static String flett(String s, String t) {
-        throw new UnsupportedOperationException();
 
-    }
+        public static String flett(String s, String t) {
+
+
+            int min = Math.min(s.length(), t.length());  // finne minste string
+
+            StringBuilder tegn = new StringBuilder();  // lage ny tabell
+
+            for (int i = 0; i < min; i++) {   // for løkke som kjører gjennom S og T.
+
+
+                tegn.append(s.charAt(i)).append(t.charAt(i)); // fletting mellom s og T ,annen hver bokstav.
+            }
+
+            tegn.append(s.substring(min)).append(t.substring(min));
+
+            return tegn.toString();
+        }
+
+
 
     /// 7b)
     public static String flett(String... s) {
-        throw new UnsupportedOperationException();
+
+        int teller = 0;
+
+        // (2) Teller igjennom "ordene" til s.
+        for (int i = 0; i < s.length; i++) {   // for løkke kjører gjenom ordene til "s"
+
+
+            for (int j = 0; j < s[i].length(); j++) {  // for løkke som teller hvor mange  tegn totalt
+                teller++;
+            }
+        }
+
+        String out = "";
+
+
+        for (int i = 0; i < teller; i++) {  // løkke kjører gjennom alle tegn til s
+
+
+            for (int j = 0; j < s.length; j++) {  // legges til string out for hvert tegn løkke går gjennom
+
+
+                if (i < s[j].length()) {
+                    out = out + s[j].charAt(i);
+                }
+            }
+        }
+        return out;
     }
 
     ///// Oppgave 8 //////////////////////////////////////
