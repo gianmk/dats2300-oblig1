@@ -11,7 +11,7 @@ public class Oblig1 {
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
         if (a.length <= 0) {
-            throw new UnsupportedOperationException(" array inneholder ikke tall.");
+            throw new NoSuchElementException(" array inneholder ikke tall.");
         }
 
         for(int i = 1; i < a.length; i++){
@@ -79,13 +79,29 @@ public class Oblig1 {
 
 
     ///// Oppgave 3 //////////////////////////////////////
-    public static int antallUlikeUsortert(int[] a) {if (a.length == 0) {        // sjekker om tabell er tom
-        return 0;
-    }
+    public static int antallUlikeUsortert(int[] a)  {
+        int ulike = 0;
 
-        int antallUlike = 1;
-        boolean bruktFor;
+        if(a.length == 0) {                                 //sjekker om array er tomt
+            ulike = 0;
+        }
+        for(int i = 0; i < a.length;i++){
+            boolean ikkeUlike = false;
+            for(int j = 0;j< i ; j++){
+                if(a[j] == a[i]) {
+                    ikkeUlike = true;
+                    break;
+                }
 
+            }
+            if (!ikkeUlike){
+                ulike++;
+
+            }
+
+        }
+
+        return ulike;
     }
 
     ///// Oppgave 4 //////////////////////////////////////
