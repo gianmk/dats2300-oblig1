@@ -186,7 +186,7 @@ public class Oblig1 {
 
         int teller = 0;
 
-        // (2) Teller igjennom "ordene" til s.
+
         for (int i = 0; i < s.length; i++) {   // for løkke kjører gjenom ordene til "s"
 
 
