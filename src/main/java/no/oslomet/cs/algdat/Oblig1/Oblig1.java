@@ -150,13 +150,16 @@ public class Oblig1 {
 
     ///// Oppgave 5 //////////////////////////////////////
     public static void rotasjon(char[] a) {
+        if(a.length <= 0){              //sjekker at array er valid
+            return;
+        }
 
-            char rotere = a[a.length - 1];
-            for (int i = a.length - 1; i > 0; i--) {
+            char rotere = a[a.length - 1];                // lage en hjelp array for å lagre sister verdi
+            for (int i = a.length - 1; i > 0; i--) {  // looper gjennom array og bytte plass.
                 a[i] = a[i - 1];
 
             }
-            a[0] = rotere;
+            a[0] = rotere; // setter siste verdi som første.
         }
 
 
