@@ -89,47 +89,47 @@ public class Oblig1 {
 
     ///// Oppgave 3 //////////////////////////////////////
     public static int antallUlikeUsortert(int[] a)  {
-        int ulike = 0;
+        int teller = 0;
 
         if(a.length == 0) {                                 //returner 0 om array er tomt.
-            return 0;
+            return teller;
         }
         for(int i = 0; i < a.length;i++){
-            boolean ikkeUlike = false;
+            boolean like = false;                   // metode for å registrer om noen av tallen er like,
             for(int j = 0;j< i ; j++){
-                if(a[j] == a[i]) {
-                    ikkeUlike = true;
+                if(a[j] == a[i]) {                       // sjekker om tall er like, og setter like = true om de er like
+                    like = true;
                     break;
                 }
 
             }
-            if (!ikkeUlike){
-                ulike++;
+            if (!like){                                // dersom like = false øker teller med 1.
+                teller++;
 
             }
 
         }
 
-        return ulike;
+        return teller;                // returner total like tall.
     }
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
 
-        int left = 0;
-        int right = a.length-1;
+        int left = 0;  // oddetall til venstre
+        int right = a.length-1;  //partall skal til høyre
 
-        for(int i = 0; i < a.length-1; i++){
+        for(int i = 0; i < a.length-1; i++){  //looper gjennom array for å sortere odde- og parttall
 
 
-            while(a[left] % 2 != 0){
+            while(a[left] % 2 != 0){         // if venstrepeker er på et oddetall, vil det flytte til høyre
                 left++;
             }
 
-            while(a[right] % 2 == 0){
+            while(a[right] % 2 == 0){         //dersom høyrepeker  er på et partall, vil det flytte til venstre
                 right--;
             }
-            if(left < right){
+            if(left < right){               // dersom venstrepeker er mindre enn høyrepeker, vil hjelpmetoden bytt() blir kalt, og tallene blir sortert om.
                 bytt(a, left, right);
             }
         }
