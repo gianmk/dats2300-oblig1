@@ -3,6 +3,7 @@ package no.oslomet.cs.algdat.Oblig1;
 ////// Løsningsforslag Oblig 1 ////////////////////////
 
 import java.lang.UnsupportedOperationException;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
@@ -107,20 +108,40 @@ public class Oblig1 {
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
 
-      if(a.length==0){
-        return;
-    }
-    int partall = 0;
-    int oddetall = 0;
+        int left = 0;
+        int right = a.length-1;
 
-        for(int i = 0; i<a.length; i++){
-        if(a[i]%2==0){
-            partall++;
-        }else
-            oddetall++;
+        for(int i = 0; i < a.length-1; i++){
+
+
+            while(a[left] % 2 != 0){
+                left++;
+            }
+
+            while(a[right] % 2 == 0){
+                right--;
+            }
+            if(left < right){
+                bytt(a, left, right);
+            }
+        }
+
+
+        Arrays.sort(a, 0, left);
+
+
+        Arrays.sort(a, left, a.length);
+    }
+    // hjelpe metode for oppgave 4
+    public static void bytt(int[] a, int i, int j)
+    {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
 
-    }
+
+
 
     ///// Oppgave 5 //////////////////////////////////////
     public static void rotasjon(char[] a) {
@@ -145,6 +166,7 @@ public class Oblig1 {
     /// 7a)
     public static String flett(String s, String t) {
         throw new UnsupportedOperationException();
+
     }
 
     /// 7b)
@@ -170,5 +192,6 @@ public class Oblig1 {
     public static boolean inneholdt(String a, String b) {
         throw new UnsupportedOperationException();
     }
+
 
 }  // Oblig1
