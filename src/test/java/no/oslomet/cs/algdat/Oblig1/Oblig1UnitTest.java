@@ -1,5 +1,7 @@
 package no.oslomet.cs.algdat.Oblig1;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -41,7 +43,10 @@ class Oblig1UnitTest {
 
     @org.junit.jupiter.api.Test
     void rotasjon() {
-        assertEquals(true, false, "Implementer rotasjon og denne testen");
+        char [] bokstav = {'H','O','A','N','G'};
+        Oblig1.rotasjon(bokstav);
+        char[] rotertBokstav = {'G','H','O','A','N'};
+        assertEquals(Arrays.toString(rotertBokstav), Arrays.toString(bokstav), "Implementer rotasjon og denne testen");
     }
 
     @org.junit.jupiter.api.Test
