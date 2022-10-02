@@ -60,4 +60,6 @@ class Oblig1UnitTest {
         assertEquals("ABCDEFGH", Oblig1.flett(a, b), "Implementer flett og denne testen");
         assertEquals("ABCDEFGH", Oblig1.flett(a, b, c), "Implementer flett og denne testen");
     }
+
 }
+
