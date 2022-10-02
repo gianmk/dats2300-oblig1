@@ -43,9 +43,8 @@ public class Oblig1 {
 
       har laget en metode som regnet på gjennomsnitt ombyttinger. ved random 10 tall permutasjon er gjennomsnittet cirka 7.
       Vi vet at log(n)-0423 er gjennomsnitt for tall som er større enn det største av tallene foran, der n er antall ulike tall.
-      Det er veldig få tall i gjennomsnitt som er større enn det største av tallene foran, derfor vil det skje en ombytting veldig ofte.
-      Jo større n blir, jo mer øker gjennomsnittet for antall ombytting slik at jo større n, jo mer antall ombytting tilnærme tallet n.
-      dette er da en mindre effektivt maks metode enn andre maks metode vi har sett på.
+      metoden gjør en ombytting hver gang a[i]-1 >a[1]. da blir formelen for gjennomsnitt for antall ombytter n-(log(n)-0.423).
+      dette er en ineffektiv maks-metode ettersom jo større tallet n blir, jo mer tilnærmer antall ombytting tallet n.
 
 
 
